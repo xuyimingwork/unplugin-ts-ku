@@ -1,9 +1,11 @@
 {
-  "name": "json-asyncx",
+  "name": "json-mapx",
+  "type": "module",
   "version": "0.0.1",
   "description": "a tool for get json content by key",
   "main": "index.js",
   "scripts": {
+    "build": "tsup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,10 +13,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xuyimingwork/json-asyncx.git"
+    "url": "git+https://github.com/xuyimingwork/json-mapx.git"
   },
   "devDependencies": {
+    "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "unplugin": "^1.12.3"
   }
 }
