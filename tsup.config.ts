@@ -4,9 +4,10 @@ export const tsup: Options = {
   entry: [
     'src/*.ts',
   ],
-  format: ['cjs', 'esm'],
+  format: ['esm'],
   dts: true,
   splitting: true,
   clean: true,
   shims: false,
+  external: ['typescript']
 }

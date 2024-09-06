@@ -1,0 +1,48 @@
+Date : 2024-09-06 09:35:36
+Directory : /Users/xuyiming/career-part-time/json-mapx/src
+Total : 15 files,  298 codes, 11 comments, 34 blanks, all 343 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| TypeScript |         15 |        298 |         11 |         34 |        343 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                         |         15 |        298 |         11 |         34 |        343 |
+| . (Files)                                                                 |          2 |         66 |         10 |         10 |         86 |
+| core                                                                      |          6 |        202 |          1 |         15 |        218 |
+| core (Files)                                                              |          5 |        174 |          1 |         12 |        187 |
+| core/code                                                                 |          1 |         28 |          0 |          3 |         31 |
+| demo                                                                      |          7 |         30 |          0 |          9 |         39 |
+| demo/api                                                                  |          2 |          9 |          0 |          1 |         10 |
+| demo/config                                                               |          2 |          9 |          0 |          1 |         10 |
+| demo/example                                                              |          2 |          9 |          0 |          1 |         10 |
+| demo/use                                                                  |          1 |          3 |          0 |          6 |          9 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                  | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/xuyiming/career-part-time/json-mapx/src/core/code-example.ts       | TypeScript |          0 |          0 |          1 |          1 |
+| /Users/xuyiming/career-part-time/json-mapx/src/core/code-index.ts         | TypeScript |         30 |          0 |          1 |         31 |
+| /Users/xuyiming/career-part-time/json-mapx/src/core/code-key-data.ts      | TypeScript |         23 |          0 |          2 |         25 |
+| /Users/xuyiming/career-part-time/json-mapx/src/core/code/shared.ts        | TypeScript |         28 |          0 |          3 |         31 |
+| /Users/xuyiming/career-part-time/json-mapx/src/core/context.ts            | TypeScript |        101 |          1 |          5 |        107 |
+| /Users/xuyiming/career-part-time/json-mapx/src/core/file.ts               | TypeScript |         20 |          0 |          3 |         23 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/api/main.d.ts         | TypeScript |          2 |          0 |          0 |          2 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/api/part.d.ts         | TypeScript |          7 |          0 |          1 |          8 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/config/index.d.ts     | TypeScript |          2 |          0 |          0 |          2 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/config/part.d.ts      | TypeScript |          7 |          0 |          1 |          8 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/example/index.d.ts    | TypeScript |          2 |          0 |          0 |          2 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/example/key-data.d.ts | TypeScript |          7 |          0 |          1 |          8 |
+| /Users/xuyiming/career-part-time/json-mapx/src/demo/use/try.ts            | TypeScript |          3 |          0 |          6 |          9 |
+| /Users/xuyiming/career-part-time/json-mapx/src/index.ts                   | TypeScript |         43 |          1 |          6 |         50 |
+| /Users/xuyiming/career-part-time/json-mapx/src/types.ts                   | TypeScript |         23 |          9 |          4 |         36 |
+| Total                                                                     |            |        298 |         11 |         34 |        343 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
