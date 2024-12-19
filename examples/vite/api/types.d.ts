@@ -3,4 +3,3 @@
 export type ApiKey = keyof ApiKeyData;
 interface ApiKeyData {
 }
-

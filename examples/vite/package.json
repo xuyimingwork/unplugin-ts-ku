@@ -3,12 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "cross-env DEBUG=json-mapx:* vite",
-    "build": "cross-env DEBUG=json-mapx:* vite build"
+    "start": "cross-env DEBUG=unplugin-ts-ku:* vite",
+    "build": "cross-env DEBUG=unplugin-ts-ku:* vite build"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "vite": "^5.4.2",
-    "json-mapx": "workspace:*"
+    "unplugin-ts-ku": "workspace:*"
   }
 }

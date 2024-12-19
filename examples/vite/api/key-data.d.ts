@@ -2,7 +2,7 @@
 
 import "./types";
 declare module "./types" {
-    interface KeyData {
+    interface apiKeyData {
         "hello": "src/api/config/hello.api.json";
     }
 }

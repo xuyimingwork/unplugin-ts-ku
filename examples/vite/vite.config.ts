@@ -7,12 +7,10 @@ export default defineConfig({
       entry: [
         {
           name: 'api',
-          globs: ['src/**/*.api.json'],
-          outDir: 'api',
+          globs: ['**/*.api.json'],
           resolver({ file, content }) {
-            console.log('call resolver', file, content)
             return {
-              
+              key: 'hello'
             }
           }
         }

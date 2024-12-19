@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": ["ES2015", "DOM"],
     "moduleResolution": "Node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   }
 }

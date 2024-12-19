@@ -48,7 +48,7 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
-      json-mapx:
+      unplugin-ts-ku:
         specifier: workspace:*
         version: link:../..
       vite:
