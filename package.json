@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xuyimingwork/json-mapx.git"
+    "url": "git+https://github.com/xuyimingwork/unplugin-ts-ku.git"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
