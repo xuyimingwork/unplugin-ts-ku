@@ -1,16 +1,34 @@
 {
-  "name": "json-mapx",
+  "name": "unplugin-ts-ku",
   "type": "module",
   "version": "0.0.1",
-  "description": "a tool for get json content by key",
+  "description": "a tool can provide ts literal union type from files",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./vite": {
+      "import": "./dist/vite.js",
+      "require": "./dist/vite.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepublish": "pnpm build"
   },
   "keywords": [
     "unplugin"
@@ -30,6 +48,7 @@
   },
   "dependencies": {
     "@antfu/utils": "^0.7.10",
+    "debug": "^4.4.0",
     "fast-glob": "^3.3.2",
     "lodash-es": "^4.17.21",
     "minimatch": "^10.0.1",

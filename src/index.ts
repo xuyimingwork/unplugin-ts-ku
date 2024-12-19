@@ -20,7 +20,6 @@ const unpluginFactory: UnpluginFactory<Options | undefined> = (options = {}) => 
     vite: {
       configResolved(config) {
         ctx.setRoot(config.root)
-        console.log('alias', config.resolve.alias)
         ctx.options.entries.forEach(entry => entry.generate())
       },
       configureServer(server) {
@@ -35,9 +34,6 @@ const unpluginFactory: UnpluginFactory<Options | undefined> = (options = {}) => 
         server.watcher.on('change', (path) => generateWhenChange(path))
         server.watcher.on('add', (path) => generateWhenChange(path))
       }
-    },
-    webpack() {
-
     }
   }
 }
@@ -45,6 +41,3 @@ const unpluginFactory: UnpluginFactory<Options | undefined> = (options = {}) => 
 const unplugin = /* #__PURE__ */ createUnplugin(unpluginFactory)
 
 export default unplugin
-
-export const vitePlugin = unplugin.vite
-// export const webpackPlugin = unplugin.webpack

@@ -2,7 +2,7 @@ type EntryResolverOneResult = string | { key: string, output?: string }
 type EntryResolver = (params: { file: string, content: string }) => EntryResolverOneResult | Array<EntryResolverOneResult> | undefined
 
 interface Entry {
-  // name is Api => ApiKey & ApiKeyData
+  // name is Api => ApiKey & ApiKeyMeta
   name?: string
   // 哪些 json 文件需要纳入匹配生成数据
   globs: string | string[]
@@ -13,8 +13,6 @@ interface Entry {
 }
 
 export interface Options {
-  // 仅对拓展 index.d.ts 文件时的导入产生影响
-  alias?: { find: string, replacement: string },
   entry?: Entry[]
 }
 

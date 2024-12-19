@@ -4,6 +4,6 @@ export function getPathRelativeOrAbsoluteAlia(pathAbsolute, relativeToPath, alia
   const pathAbsoluteAlia = alias && pathAbsolute.startsWith(alias.replacement) 
     ? pathAbsolute.replace(alias.replacement, alias.find)
     : undefined
-  const outputRelative = `${relative(pathAbsolute, relativeToPath)
-  const _output = (outputAbsoluteByAlias || outputRelative).replace(/\.d\.ts$/, '')
+  const pathRelative = relative(pathAbsolute, relativeToPath)
+  return pathAbsoluteAlia || pathRelative
 }
