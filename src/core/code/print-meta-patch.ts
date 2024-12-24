@@ -14,7 +14,7 @@ import ts, { factory } from 'typescript'
  * 合并 module 合并 name
  */
 export function getPrintMetaPatch(options: ArrayOrItem<{
-  // 根文件相与当前文件的相对位置，库名等
+  // 根文件相与当前文件的相对位置
   root: string,
   name?: string,
   properties?: InterfaceProperty[]

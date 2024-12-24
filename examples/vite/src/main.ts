@@ -1,7 +1,13 @@
-import { Key } from "../api/types";
+import { ApiKey, TryKey } from '../ku'
 
-function request(key: Key) {
+function request(key: ApiKey) {
 
 }
 
-request('hello')
+function myTry(key: TryKey) {
+
+}
+
+request('src/api/config/hello.api.json');
+
+myTry('src/hello.try.json')

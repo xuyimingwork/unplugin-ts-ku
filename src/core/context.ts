@@ -5,7 +5,8 @@ import { resolveOptions } from './resolve'
 import { match } from './globs'
 import pkg from '../../package.json'
 import { readFile } from 'node:fs/promises'
-import { query } from './entry'
+import { preview, query } from './entry'
+import { writeFiles } from './file'
 
 const debug = {
   root: Debug(`${pkg.name}:context:root`),
@@ -189,13 +190,7 @@ export class Context {
      * - 多个 entry 有可能生成同一份文件
      * - 只能多个 entry 生成多个文件，不可以逐个 entry 生成
      */
-    debug.refresh('output', this.options.entries.map(entry => entry.output))
-    this.options.entries.forEach(entry => {
-      debug.refresh('globs', entry.globs, this.root)
-      query(entry, { root: this.root })
-        .then(results => {
-          results.map(result => debug.refresh('result', result))
-        })
-    })
+    preview(this.options.entries, { root: this.root })
+      .then(results => writeFiles(results))
   }
 }

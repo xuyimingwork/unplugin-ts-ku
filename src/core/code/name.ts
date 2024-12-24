@@ -1,4 +1,4 @@
-import { capitalize, camelCase } from "lodash-es";
+import { capitalize, camelCase, trim } from "lodash-es";
 
 export const ENTRY_NAME_DEFAULT = 'ku'
 
@@ -22,7 +22,7 @@ export function getSampleFileName(name?: string) {
 }
 
 export function getNameOfBase(name?: string) {
-  name = typeof name === 'string' ? (name.trim() || '') : ''
+  name = trim(name)
   return name || ENTRY_NAME_DEFAULT
 }
 
