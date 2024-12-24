@@ -1,13 +1,7 @@
-import { ApiKey, TryKey } from '../ku'
+import { KuKey } from '../ku'
 
-function request(key: ApiKey) {
-
+function getImage(key: KuKey) {
+  // do your logical based on key
 }
 
-function myTry(key: TryKey) {
-
-}
-
-request('src/api/config/hello.api.json');
-
-myTry('src/hello.try.json')
+getImage('src/hello.png')

@@ -1,31 +1,18 @@
-import JsonMapx from 'json-mapx/vite'
-import { basename, dirname, resolve } from 'path'
-import { defineConfig } from 'vite'
+import TsKu from 'unplugin-ts-ku/vite'
 
-export default defineConfig({
+export default {
   plugins: [
-    JsonMapx({
+    TsKu({
       entry: [
         {
-          name: 'try',
-          globs: ['**/*.try.json'],
-          resolver({ file, content }) {            
-            return {
-              key: file,
-              output: resolve(dirname(file), `${basename(file, '.json')}.d.ts`)
-            }
-          }
-        },
-        {
-          name: 'api',
-          globs: ['**/*.api.json'],
+          name: 'img',
+          output: 'src/img.d.ts',
+          globs: ['**/*.public.png'],
           resolver({ file, content }) {
-            return {
-              key: file
-            }
+            return file.replace('.public', '')
           }
         }
       ]
     })
   ]
-})
+}
