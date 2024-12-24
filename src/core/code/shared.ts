@@ -22,10 +22,9 @@ export function createInterfacePropertySignatureList(items: Array<{ key: string,
 
 export function createCode(elements: Node[]) {
   const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed })
-  const code = printer.printList(
+  return printer.printList(
     ts.ListFormat.MultiLine, 
     factory.createNodeArray(elements),
     ts.createSourceFile('', '', ts.ScriptTarget.ES2015)
   )
-  return code
 }

@@ -1,4 +1,8 @@
-type ArrayOrItem<T> = T | T[]
+export type ArrayOrItem<T> = T | T[]
+export interface InterfaceProperty {
+  key: string, 
+  value: string
+}
 
 export interface OptionEntry {
   name?: string
@@ -15,11 +19,13 @@ export interface Options {
   entry: ArrayOrItem<OptionEntry>
 }
 
+export interface ResolvedOptionEntry {
+  name: string
+  output: string
+  globs: string[]
+  resolver: (...args: Parameters<OptionEntryResolver>) => Array<{ key: string, output: string }>
+}
+
 export interface ResolvedOptions {
-  entries: Array<{
-    name: string
-    output: string
-    globs: string[]
-    resolver: OptionEntryResolver
-  }>
+  entries: ResolvedOptionEntry[]
 }

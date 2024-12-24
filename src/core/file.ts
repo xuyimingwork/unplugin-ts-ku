@@ -21,3 +21,31 @@ export function writeFile(file: string, content: string) {
       return _writeFile(file, _content)
     })
 }
+
+export function writeFiles(files: Array<{ file: string, content: string, deps?: string[] }>) {
+  const done = new Set()
+  const error = new Set()
+  function getNextFiles() {
+    if (!done.size) return files.filter(({ deps }) => !deps || !deps.length)
+    return files.filter(({ deps, file }) => !done.has(file) && !error.has(file) && deps?.every(dep => done.has(dep)))
+  }
+  return new Promise((resolve, reject) => {
+    function next() {
+      const nextFiles = getNextFiles()
+      if (!nextFiles.length) return resolve({
+        done: Array.from(done),
+        error: Array.from(error),
+        ok: done.size === files.length
+      })
+      Promise.all(nextFiles.map(({ file, content }) => {
+        return writeFile(file, content)
+          .then(() => {
+            done.add(file)
+          })
+          .catch((err) => error.add(file))
+      }))
+        .finally(next)
+    }
+    next()
+  })
+}
