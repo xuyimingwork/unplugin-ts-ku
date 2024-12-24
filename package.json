@@ -2,7 +2,7 @@
   "name": "unplugin-ts-ku",
   "type": "module",
   "version": "0.0.1",
-  "description": "a tool can provide ts literal union type from files",
+  "description": "a tool to generate ts string literal union type from files",
   "exports": {
     ".": {
       "import": "./dist/index.js",
