@@ -1,4 +1,4 @@
-import { capitalize, camelCase, trim } from "lodash-es";
+import { camelCase, trim, upperFirst } from "lodash-es";
 
 export const ENTRY_NAME_DEFAULT = 'ku'
 
@@ -10,11 +10,11 @@ export function getKeyDataInterfaceName(name?: string) {
 }
 
 export function getKeyTypeName(name?: string) {
-  return `${capitalize(camelCase(name))}Key`
+  return `${upperFirst(camelCase(name))}Key`
 }
 
 export function getKeyGetConfigByFunctionName(name) {
-  return `get${capitalize(camelCase(name))}ConfigBy`
+  return `get${upperFirst(camelCase(name))}ConfigBy`
 }
 
 export function getSampleFileName(name?: string) {
@@ -27,7 +27,7 @@ export function getNameOfBase(name?: string) {
 }
 
 export function getNameOfKey(name?: string) {
-  const base = capitalize(camelCase(getNameOfBase(name)))
+  const base = upperFirst(camelCase(getNameOfBase(name)))
   return `${base}Key`
 }
 

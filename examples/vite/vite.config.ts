@@ -5,7 +5,7 @@ export default {
     TsKu({
       entry: [
         {
-          name: 'img',
+          name: 'app-img',
           output: 'src/img.d.ts',
           globs: ['**/*.public.png'],
           resolver({ file, content }) {
