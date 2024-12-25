@@ -2,7 +2,8 @@ import { ArrayOrItem, InterfaceProperty } from "../type";
 import { createMetaInterface } from "./meta";
 import { getNameOfBase } from "./name";
 import { createCode } from "./shared";
-import ts, { factory } from 'typescript'
+import ts from 'typescript'
+const factory = ts.factory
 
 /**
  * 不同的 name，不同的 module，ok

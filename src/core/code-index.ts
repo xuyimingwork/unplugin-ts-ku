@@ -1,7 +1,7 @@
-import ts, { Node } from 'typescript'
-const factory = ts.factory
+import ts from 'typescript'
 import { createCode } from "./code/shared";
 import { getKeyDataInterfaceName, getKeyTypeName } from './code/name';
+const factory = ts.factory
 
 export function createCodeIndex(name?: string) {
   const keyDataName = getKeyDataInterfaceName(name)

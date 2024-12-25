@@ -1,4 +1,4 @@
-import ts, { Node } from 'typescript'
+import ts from 'typescript'
 import { createCode, createInterfaceDeclaration } from './code/shared';
 const factory = ts.factory
 
