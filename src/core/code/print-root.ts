@@ -1,4 +1,4 @@
-import { createCode } from "./shared";
+import { print } from "./print-utils";
 import { isObject } from 'lodash-es';
 import { getNameOfBase } from './name';
 import { createMetaInterface } from './meta';
@@ -44,5 +44,5 @@ export function getPrintRoot(options: Options): string {
     ]
   }).filter(Boolean).flat()
 
-  return createCode(declarations)
+  return print(declarations)
 }

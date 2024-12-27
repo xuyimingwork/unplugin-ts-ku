@@ -1,7 +1,7 @@
 import { ArrayOrItem, InterfaceProperty } from "../type";
 import { createMetaInterface } from "./meta";
 import { getNameOfBase } from "./name";
-import { createCode } from "./shared";
+import { print } from "./print-utils";
 import ts from 'typescript'
 const factory = ts.factory
 
@@ -55,5 +55,5 @@ export function getPrintMetaPatch(options: ArrayOrItem<{
       )
     )))
   ]
-  return createCode(declarations)
+  return print(declarations)
 }
