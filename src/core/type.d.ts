@@ -5,14 +5,15 @@ export interface InterfaceProperty {
 }
 
 export interface OptionEntry {
-  name?: string
+  name?: string | string[]
   output?: string
   globs: ArrayOrItem<string>
+  skipContent?: boolean,
   resolver: OptionEntryResolver
 }
 
 export interface OptionEntryResolver {
-  (params: { file: string, content: string }): void | ArrayOrItem<string | { key: string, output?: string }>
+  (params: { file: string, content?: string }): void | ArrayOrItem<string | { key: string, output?: string, name?: string }>
 }
 
 export interface Options {
@@ -20,10 +21,11 @@ export interface Options {
 }
 
 export interface ResolvedOptionEntry {
-  name: string
+  names: string[]
   output: string
   globs: string[]
-  resolver: (...args: Parameters<OptionEntryResolver>) => Array<{ key: string, output: string }>
+  skipContent: boolean
+  resolver: (...args: Parameters<OptionEntryResolver>) => Array<{ key: string, output: string, name: string }>
 }
 
 export interface ResolvedOptions {

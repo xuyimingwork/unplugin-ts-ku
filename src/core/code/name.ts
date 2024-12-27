@@ -21,9 +21,9 @@ export function getSampleFileName(name?: string) {
 
 }
 
-export function getNameOfBase(name?: string) {
+export function getNameOfBase(name?: string, fallback: string = ENTRY_NAME_DEFAULT): string {
   name = trim(name)
-  return name || ENTRY_NAME_DEFAULT
+  return name || fallback
 }
 
 export function getNameOfKey(name?: string) {

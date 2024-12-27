@@ -1,7 +1,7 @@
 import { slash, toArray } from "@antfu/utils"
-import { Options, ResolvedOptions } from "./type"
+import { OptionEntry, Options, ResolvedOptionEntry, ResolvedOptions } from "./type"
 import { relative, resolve } from "node:path"
-import { getNameOfBase } from "./code/name"
+import { ENTRY_NAME_DEFAULT, getNameOfBase } from "./code/name"
 import { trim } from "lodash-es"
 
 function resolveGlobsExclude(root: string, glob: string) {
@@ -9,14 +9,16 @@ function resolveGlobsExclude(root: string, glob: string) {
   return `${excludeReg.test(glob) ? '!' : ''}${resolve(root, glob.replace(excludeReg, ''))}`
 }
 
-export function resolveOptionEntry(entry, root: string) {
-  const name = getNameOfBase(entry.name)
+export function resolveOptionEntry(entry: OptionEntry, root: string): ResolvedOptionEntry {
+  const names = toArray(entry.name).map(name => getNameOfBase(name)).filter(name => !!name)
+  if (!names.length) names.push(ENTRY_NAME_DEFAULT)
   const output = trim(entry.output) || `ku.d.ts`
   const rootOutput = resolve(root, output)
   return {
-    name,
+    names,
     output: rootOutput,
     globs: toArray(entry.globs).map(glob => slash(resolveGlobsExclude(root, glob))),
+    skipContent: !!entry.skipContent,
     resolver: (params) => {
       try {
         const result = entry.resolver({ 
@@ -26,11 +28,12 @@ export function resolveOptionEntry(entry, root: string) {
         if (!result) return []
         return toArray(result).map(item => {
           if (!item) return
-          if (typeof item === 'string') return { key: item, output: rootOutput }
+          if (typeof item === 'string') return { key: item, output: rootOutput, name: names[0] }
           const output = trim(item.output)
           const ext = '.d.ts'
           return {
             key: item.key,
+            name: getNameOfBase(item.name, names[0]),
             output: output && output.length > ext.length && output.endsWith(ext) ? resolve(root, item.output) : rootOutput
           }
         }).filter(item => !!item)
