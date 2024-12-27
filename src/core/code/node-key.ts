@@ -1,5 +1,5 @@
 import ts from 'typescript'
-import { getNameOfKey, getNameOfKeyMeta } from './name'
+import { getNameOfKey, getNameOfKeyMeta } from '../name'
 const factory = ts.factory
 
 export function createKeyTypeExport(name: string) {

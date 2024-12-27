@@ -1,3 +1,9 @@
+## Next
+
+- [ ] support alias.
+- [ ] test case
+- [ ] multi instance support?
+
 ## Usage
 
 Install

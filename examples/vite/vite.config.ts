@@ -8,10 +8,19 @@ export default {
           name: 'app-img',
           output: 'src/img.d.ts',
           globs: ['**/*.public.png'],
-          resolver({ file, content }) {
+          skipContent: true,
+          resolver({ file }) {
             return file.replace('.public', '')
           }
-        }
+        },
+        {
+          name: 'try',
+          output: 'src/try.d.ts',
+          globs: ['**/*.try.json'],
+          resolver({ file }) {
+            return 'try'
+          }
+        },
       ]
     })
   ]

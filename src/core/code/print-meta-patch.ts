@@ -1,6 +1,6 @@
 import { ArrayOrItem, InterfaceProperty } from "../type";
-import { createMetaInterface } from "./meta";
-import { getNameOfBase } from "./name";
+import { createMetaInterface } from "./node-meta";
+import { getNameOfBase } from "../name";
 import { print } from "./print-utils";
 import ts from 'typescript'
 const factory = ts.factory

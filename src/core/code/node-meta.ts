@@ -1,5 +1,5 @@
 import ts from 'typescript'
-import { getNameOfKeyMeta } from './name'
+import { getNameOfKeyMeta } from '../name'
 import { InterfaceProperty } from '../type'
 const factory = ts.factory
 

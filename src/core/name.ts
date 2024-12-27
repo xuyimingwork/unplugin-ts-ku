@@ -1,6 +1,5 @@
 import { camelCase, trim, upperFirst } from "lodash-es";
-
-export const ENTRY_NAME_DEFAULT = 'ku'
+import { ENTRY_NAME_DEFAULT } from "./static";
 
 export function getNameOfBase(name?: string, fallback: string = ENTRY_NAME_DEFAULT): string {
   name = trim(name)

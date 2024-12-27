@@ -1,8 +1,9 @@
 import { slash, toArray } from "@antfu/utils"
 import { OptionEntry, Options, ResolvedOptionEntry, ResolvedOptions } from "./type"
 import { relative, resolve } from "node:path"
-import { ENTRY_NAME_DEFAULT, getNameOfBase } from "./code/name"
+import { getNameOfBase } from "./name"
 import { trim } from "lodash-es"
+import { ENTRY_NAME_DEFAULT } from "./static"
 
 function resolveGlobsExclude(root: string, glob: string) {
   const excludeReg = /^!/
@@ -12,7 +13,7 @@ function resolveGlobsExclude(root: string, glob: string) {
 export function resolveOptionEntry(entry: OptionEntry, root: string): ResolvedOptionEntry {
   const names = toArray(entry.name).map(name => getNameOfBase(name)).filter(name => !!name)
   if (!names.length) names.push(ENTRY_NAME_DEFAULT)
-  const output = trim(entry.output) || `ku.d.ts`
+  const output = trim(entry.output) || `${ENTRY_NAME_DEFAULT}.d.ts`
   const rootOutput = resolve(root, output)
   return {
     names,

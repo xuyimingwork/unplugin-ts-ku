@@ -1,8 +1,8 @@
 import { print } from "./print-utils";
 import { isObject } from 'lodash-es';
-import { getNameOfBase } from './name';
-import { createMetaInterface } from './meta';
-import { createKeyTypeExport } from './key';
+import { getNameOfBase } from '../name';
+import { createMetaInterface } from './node-meta';
+import { createKeyTypeExport } from './node-key';
 import { ArrayOrItem, InterfaceProperty } from '../type';
 
 type Options = ArrayOrItem<string | { name?: string, properties?: InterfaceProperty[] }>
